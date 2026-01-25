@@ -1,0 +1,62 @@
+{
+  "locations": [
+    {
+      "id": "vstupni_hala",
+      "nazev": "Vstupní hala",
+      "popis": "Nacházíš se v hlavní hale akademie. Cesta vede do Knihovny, Studovny a na Kolej učňů.",
+      "vychody": ["knihovna", "kolej_ucnu"]
+    },
+    {
+      "id": "knihovna",
+      "nazev": "Knihovna",
+      "popis": "Místnost plná prachu a starých knih. Sedí zde Knihovník.",
+      "vychody": ["vstupni_hala", "studovna"],
+      "postavy": [{"jmeno": "knihovnik", "monolog": "Hledáš Jádro? Musíš projít zahradou."}]
+    },
+    {
+      "id": "studovna",
+      "nazev": "Studovna",
+      "popis": "Místo, kde se dříve učili mágové. Vidíš cestu do Laboratoře.",
+      "vychody": ["knihovna", "laborator"],
+      "predmety": [{"nazev": "svitek", "popis": "Starý magický svitek.", "prenositelna": true}]
+    },
+    {
+      "id": "laborator",
+      "nazev": "Laboratoř",
+      "popis": "Místnost s alchymistickým vybavením.",
+      "vychody": ["studovna"],
+      "predmety": [
+        {"nazev": "lektvar", "popis": "Léčivý lektvar.", "prenositelna": true},
+        {"nazev": "stul", "popis": "Těžký kamenný stůl.", "prenositelna": false}
+      ]
+    },
+    {
+      "id": "kolej_ucnu",
+      "nazev": "Kolej učňů",
+      "popis": "Obytné prostory učňů. Cesta vede na Zahradu.",
+      "vychody": ["vstupni_hala", "zahrada"],
+      "predmety": [{"nazev": "klic", "popis": "Klíč od sklepa.", "prenositelna": true}]
+    },
+    {
+      "id": "zahrada",
+      "nazev": "Zahrada",
+      "popis": "Otevřený prostor, kde stojí Strážce zahrady. Odtud se dá jít do Sklepa.",
+      "vychody": ["kolej_ucnu", "sklep"],
+      "postavy": [{"jmeno": "strazce", "monolog": "Neprojdeš, dokud mě neuklidníš!"}]
+    },
+    {
+      "id": "sklep",
+      "nazev": "Sklep",
+      "popis": "Temná místnost. Tady leží to, co hledáš.",
+      "vychody": ["zahrada", "sin_ritualu"],
+      "predmety": [{"nazev": "jadro", "popis": "Jádro rovnováhy silně září.", "prenositelna": true}]
+    },
+    {
+      "id": "sin_ritualu",
+      "nazev": "Síň rituálů",
+      "popis": "Místo pro finální rituál.",
+      "vychody": ["sklep"],
+      "predmety": [{"nazev": "magicky portal", "popis": "Cesta domů.", "prenositelna": true}]
+    }
+  ]
+}
