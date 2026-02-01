@@ -33,12 +33,6 @@ public class PrikazJdi implements IPrikaz {
         return sousedni.dlouhyPopis();
     }
 
-
-
-
-
-
-
     @Override
     public String getNazev() { return "jdi"; }
 

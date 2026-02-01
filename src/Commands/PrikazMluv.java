@@ -2,12 +2,13 @@ package Commands;
 
 import Else.Nacitani;
 import Else.Postava;
+import Else.Prostor;
 
 public class PrikazMluv implements IPrikaz {
     private Nacitani n;
     private String cil;
 
-    public PrikazMluv(Nacitani plan) {
+    public PrikazMluv(Nacitani n) {
         this.n = n;
     }
     @Override
@@ -18,9 +19,20 @@ public class PrikazMluv implements IPrikaz {
 
     @Override
     public String proved() {
-        if (cil.isEmpty()) return "Na koho chceš mluvit?";
-        Postava p = n.getAktualniProstor().getPostava(cil);
-        return (p != null) ? p.getJmeno() + ": " + p.mluv() : "Někdo takový tu není.";
+        if (cil == null || cil.trim().isEmpty()) {
+            return "S kým mám mluvit? Musíš zadat jméno postavy.";
+        }
+
+
+        Prostor aktualni = n.getAktualniProstor();
+
+        Postava postava = aktualni.getPostava(cil);
+
+        if (postava != null) {
+            return postava.mluv();
+        } else {
+            return "Postava '" + cil + "' tu není.";
+        }
     }
 
     @Override

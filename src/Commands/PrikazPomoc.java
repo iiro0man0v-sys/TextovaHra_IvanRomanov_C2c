@@ -2,8 +2,6 @@ package Commands;
 
 import Else.SeznamPrikazu;
 
-import java.util.ArrayList;
-
 public class PrikazPomoc implements IPrikaz {
     private SeznamPrikazu seznam;
 

@@ -68,6 +68,9 @@ public class Nacitani {
     public Prostor getAktualniProstor() {
         return aktualniProstor;
     }
+    public Prostor getProstor(String id) {
+        return vsechnyProstory.get(id);
+    }
 
     public void setAktualniProstor(Prostor prostor) {
         this.aktualniProstor = prostor;
