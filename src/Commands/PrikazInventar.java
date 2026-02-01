@@ -11,7 +11,7 @@ public class PrikazInventar implements IPrikaz {
 
     @Override
     public String proved() {
-        return "V batohu máš: ";
+        return "Obsah batohu: " + n.getBatoh().getSeznamVeci();
     }
 
     @Override

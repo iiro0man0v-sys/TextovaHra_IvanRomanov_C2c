@@ -12,7 +12,7 @@ public class PrikazNapoveda implements IPrikaz {
 
     @Override
     public String proved() {
-        return "Prozkoumej okolí a sbírej předměty.";
+        return "Prozkoumej okolí a sbírej předměty, promluv s postavami, jestli jsou v teto mistnosti.";
     }
 
     @Override

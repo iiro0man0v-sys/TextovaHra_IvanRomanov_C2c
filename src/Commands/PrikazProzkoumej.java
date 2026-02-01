@@ -12,7 +12,7 @@ public class PrikazProzkoumej implements IPrikaz {
 
     @Override
     public String proved() {
-        return "";
+        return n.getAktualniProstor().dlouhyPopis();
     }
 
     @Override
