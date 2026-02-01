@@ -23,7 +23,7 @@ public class Nacitani {
 
     /**
      * Metoda načte data z JSON souboru a sestaví herní svět.
-     * @param cesta cesta k souboru (např. "/gamedata.json")
+     * @param cesta cesta k souboru
      */
     public void nactiZeSouboru(String cesta) throws IOException {
         Gson gson = new Gson();
@@ -32,7 +32,7 @@ public class Nacitani {
                 throw new RuntimeException("Soubor nebyl nalezen: " + cesta);
             }
 
-            // Načtení dat do pomocné struktury
+
             GameData data = gson.fromJson(
                     new InputStreamReader(is, StandardCharsets.UTF_8),
                     GameData.class

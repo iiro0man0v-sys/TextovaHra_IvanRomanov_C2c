@@ -9,11 +9,17 @@ public class PrikazNapoveda implements IPrikaz {
         this.n = n;
     }
 
+
     @Override
-    public String proved(String[] parametry) {
+    public String proved() {
         return "Prozkoumej okolí a sbírej předměty.";
     }
 
     @Override
     public String getNazev() { return "napoveda"; }
+
+    @Override
+    public void setPrikaz(String prikaz) {
+
+    }
 }

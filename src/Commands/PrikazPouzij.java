@@ -9,11 +9,17 @@ public class PrikazPouzij implements IPrikaz {
         this.hra = hra;
     }
 
+
     @Override
-    public String proved(String[] parametry) {
+    public String proved() {
         return "";
     }
 
     @Override
     public String getNazev() { return "pouzij"; }
+
+    @Override
+    public void setPrikaz(String prikaz) {
+
+    }
 }

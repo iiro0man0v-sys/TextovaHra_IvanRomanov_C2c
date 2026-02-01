@@ -2,6 +2,8 @@ package Commands;
 
 import Else.SeznamPrikazu;
 
+import java.util.ArrayList;
+
 public class PrikazPomoc implements IPrikaz {
     private SeznamPrikazu seznam;
 
@@ -9,11 +11,17 @@ public class PrikazPomoc implements IPrikaz {
         this.seznam = seznam;
     }
 
+
     @Override
-    public String proved(String[] parametry) {
-        return "Dostupné příkazy: " + seznam.vratNazvyPrikazu();
+    public String proved() {
+        return "";
     }
 
     @Override
     public String getNazev() { return "pomoc"; }
+
+    @Override
+    public void setPrikaz(String prikaz) {
+
+    }
 }

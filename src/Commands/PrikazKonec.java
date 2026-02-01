@@ -9,12 +9,18 @@ public class PrikazKonec implements IPrikaz {
         this.hra = hra;
     }
 
+
     @Override
-    public String proved(String[] parametry) {
+    public String proved() {
         hra.setKonecHry(true);
         return "Ukončuji hru...";
     }
 
     @Override
     public String getNazev() { return "konec"; }
+
+    @Override
+    public void setPrikaz(String prikaz) {
+
+    }
 }
