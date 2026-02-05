@@ -1,4 +1,5 @@
 {
+  "uvodniText": "Probudíš se v opuštěné Magické akademii Arkanum,\nkde se po dávné katastrofě ztratilo Jádro rovnováhy, artefakt udržující stabilitu magie.\nRada mágů tě vyslala, abys akademii prozkoumal, Jádro našel a aktivoval ho v Síni rituálů.\nOsud magie teď závisí jen na tobě.",
   "locations": [
     {
       "id": "vstupni_hala",
@@ -10,8 +11,8 @@
       "id": "knihovna",
       "nazev": "Knihovna",
       "popis": "Místnost plná prachu a starých knih. Sedí zde Knihovník.",
-      "vychody": ["vstupni_hala", "studovna"],
-      "postavy": [{"jmeno": "knihovnik", "monolog": "Hledáš Jádro? Musíš projít zahradou."}]
+      "vychody": ["vstupni_hala", "studovna", "kolej_ucnu"],
+      "postavy": [{"jmeno": "knihovnik", "monolog": "Zdravím poutníku. Hledáš Jádro? Budeš se muset ponořit do temnoty akademie."}]
     },
     {
       "id": "studovna",
@@ -40,9 +41,9 @@
     {
       "id": "zahrada",
       "nazev": "Zahrada",
-      "popis": "Otevřený prostor, kde stojí Strážce zahrady. Odtud se dá jít do Sklepa.",
+      "popis": "Otevřený prostor, kde stojí Strážce zahrady a je jen jeden způsob se dostat přes něj.",
       "vychody": ["kolej_ucnu", "sklep"],
-      "postavy": [{"jmeno": "strazce", "monolog": "Neprojdeš, dokud mě neuklidníš!"}]
+      "postavy": [{"jmeno": "strazce", "monolog": "Neeprojdeeeeeeš"}]
     },
     {
       "id": "sklep",
@@ -54,9 +55,9 @@
     {
       "id": "sin_ritualu",
       "nazev": "Síň rituálů",
-      "popis": "Místo pro finální rituál.",
+      "popis": "Je to konec?",
       "vychody": ["sklep"],
-      "predmety": [{"nazev": "magicky portal", "popis": "Cesta domů.", "prenositelna": true}]
+      "predmety": [{"nazev": "magicky portal", "popis": "???", "prenositelna": true}]
     }
   ]
 }

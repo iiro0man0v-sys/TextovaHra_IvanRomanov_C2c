@@ -1,5 +1,7 @@
 package Else;
 
+import Commands.PrikazProzkoumej;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,6 +13,12 @@ public class Prostor {
     private Map<String, Prostor> vychody;
     private Map<String, Vec> predmety;
     private Map<String, Postava> postavy;
+    private final String mapa =
+            "Mapa: \n"+
+            "Vstupní hala \n" +
+            " ├─ Knihovna ─ Studovna ─ Laboratoř \n" +
+            " └─ Kolej učňů ─ Zahrada ─ Sklep \n" +
+            "                              └─ Síň rituálů \n";
 
     public Prostor() {
     }
@@ -32,10 +40,19 @@ public class Prostor {
     }
 
     public String dlouhyPopis() {
-        String info = "Místnost: " + nazev + "\n" + popis + "\n";
+        String info;
+        info = "Místnost: " + nazev + "\n" + popis + "\n";
         info += "Východy: " + String.join(", ", vychody.keySet()) + "\n";
-        info += "Předměty: " + (predmety.isEmpty() ? "žádné" : String.join(", ", predmety.keySet())) + "\n";
-        info += "Postavy: " + (postavy.isEmpty() ? "nikdo tu není" : String.join(", ", postavy.keySet()));
+        info += mapa;
+        info += "Jestli chceš vědět, jaké postavy a předměty se tady nachazejí pouzij prikaz 'prozkoumej'";
+        if (PrikazProzkoumej.prozkoumano){
+            info = "Místnost: " + nazev + "\n" + popis + "\n";
+            info += "Východy: " + String.join(", ", vychody.keySet()) + "\n";
+            info += "Předměty: " + (predmety.isEmpty() ? "žádné" : String.join(", ", predmety.keySet())) + "\n";
+            info += "Postavy: " + (postavy.isEmpty() ? "nikdo tu není" : String.join(", ", postavy.keySet()));
+            info += mapa;
+            return info;
+        }
         return info;
     }
 

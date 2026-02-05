@@ -7,6 +7,8 @@ public class PrikazJdi implements IPrikaz {
     private Nacitani n;
     private String cil;
 
+    public static boolean sklepOdemcen = false;
+
     public PrikazJdi(Nacitani n) {
         this.n = n;
     }
@@ -28,6 +30,11 @@ public class PrikazJdi implements IPrikaz {
 
         if (sousedni == null) {
             return "Tam se odsud jít nedá! Zkus jiný směr.";
+        }
+        if (aktualni.getNazev().equalsIgnoreCase("Zahrada") && cil.equalsIgnoreCase("sklep")) {
+            if (!sklepOdemcen) {
+                return "Dveře do sklepa jsou pevně zamčené. Vypadá to, že by pasoval klíč.";
+            }
         }
         n.setAktualniProstor(sousedni);
         return sousedni.dlouhyPopis();

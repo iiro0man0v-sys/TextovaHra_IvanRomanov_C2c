@@ -18,6 +18,7 @@ public class Hra {
         try {
             n.nactiZeSouboru("/Mistnosti.json");
             Prostor startovniMistnost = n.getProstor("vstupni_hala");
+            n.setAktualniProstor(startovniMistnost);
         } catch (Exception e) {
             System.out.println("Chyba: Nepodařilo se načíst herní data.");
         }
@@ -40,6 +41,7 @@ public class Hra {
 
     public void hraj() {
         System.out.println("Vítej ve hře Stíny Akademie!");
+        System.out.println(n.getUvodniText());
         if (n.getAktualniProstor() != null) {
             System.out.println(n.getAktualniProstor().dlouhyPopis());
         }
@@ -53,6 +55,10 @@ public class Hra {
         System.out.println("Děkujeme za hraní.");
     }
 
+    /**
+     * @param radek vstup od hrače
+     * @return Odpověď hračovi
+     */
     public String zpracujPrikaz(String radek) {
         String vstup = radek.trim();
         if (vstup.isEmpty()) return "Zadej příkaz.";

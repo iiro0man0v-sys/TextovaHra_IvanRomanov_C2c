@@ -13,6 +13,7 @@ public class Nacitani {
     private Prostor aktualniProstor;
     private Inventar batoh;
     private Map<String, Prostor> vsechnyProstory;
+    private String uvodniText;
 
     public void nacitani() {
         batoh = new Inventar();
@@ -37,7 +38,7 @@ public class Nacitani {
                     new InputStreamReader(is, StandardCharsets.UTF_8),
                     GameData.class
             );
-
+            this.uvodniText = data.uvodniText;
 
             for (ProstorData pData : data.locations) {
                 Prostor novy = new Prostor(pData.nazev, pData.popis);
@@ -78,5 +79,9 @@ public class Nacitani {
 
     public Inventar getBatoh() {
         return batoh;
+    }
+
+    public String getUvodniText() {
+        return uvodniText;
     }
 }

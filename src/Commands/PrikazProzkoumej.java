@@ -5,6 +5,8 @@ import Else.Nacitani;
 public class PrikazProzkoumej implements IPrikaz {
     private Nacitani n;
 
+    public static boolean prozkoumano = false;
+
     public PrikazProzkoumej(Nacitani n) {
         this.n = n;
     }
@@ -12,6 +14,7 @@ public class PrikazProzkoumej implements IPrikaz {
 
     @Override
     public String proved() {
+        prozkoumano = true;
         return n.getAktualniProstor().dlouhyPopis();
     }
 

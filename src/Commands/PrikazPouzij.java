@@ -7,6 +7,9 @@ public class PrikazPouzij implements IPrikaz {
     private Hra hra;
     private String cil;
 
+    public PrikazPouzij() {
+    }
+
     public PrikazPouzij(Hra hra) {
         this.hra = hra;
     }
@@ -30,6 +33,10 @@ public class PrikazPouzij implements IPrikaz {
         Prostor aktualni = hra.getN().getAktualniProstor();
 
 
+        /**
+         * Switch řeší požítí každého předmětu
+         * @param cil.toLowerCase() předmět, který chceme použít
+         */
         switch (cil.toLowerCase()) {
             case "jadro":
 
@@ -50,9 +57,14 @@ public class PrikazPouzij implements IPrikaz {
             case "klic":
 
                 if (aktualni.getNazev().equals("Zahrada")) {
+                    PrikazJdi.sklepOdemcen = true;
                     return "Použil jsi klíč. Těžké dveře do sklepa se s vrzáním otevřely.";
+
+                } else if (aktualni.getNazev().equals("Zahrada") && !PrikazJdi.sklepOdemcen) {
+                    return "Dveře už jsou otevřené";
                 }
                 return "Tady není co odemknout.";
+
 
             case "svitek":
 

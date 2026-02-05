@@ -23,7 +23,6 @@ public class PrikazMluv implements IPrikaz {
             return "S kým mám mluvit? Musíš zadat jméno postavy.";
         }
 
-
         Prostor aktualni = n.getAktualniProstor();
 
         Postava postava = aktualni.getPostava(cil);
